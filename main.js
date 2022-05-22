@@ -8,7 +8,7 @@ let jData;
 (async() =>{
     const data= await fetch("https://danepubliczne.imgw.pl/api/data/synop")
     jData= await data.json()
-    console.log(jData)
+
     jData.forEach(el =>{
         const optionElement= document.createElement("option")
         optionElement.setAttribute("value" , `${el.stacja}`)
@@ -18,8 +18,8 @@ let jData;
 })()
 
 const displayCityData= city =>{
-    if (city !== "Wybierz miasto") {
-        console.log(city)
+    if (city !== "unknown") {
+
         const result = jData.filter(el => el.stacja === city)
         const {stacja, data_pomiaru, godzina_pomiaru, temperatura, suma_opadu} = result[0]
         intro.textContent = `Wyświetlam pogodę dla miasta ${stacja}`
