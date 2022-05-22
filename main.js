@@ -21,7 +21,7 @@ const displayCityData= city =>{
     if (city !== "unknown") {
 
         const result = jData.filter(el => el.stacja === city)
-        const {stacja, data_pomiaru, godzina_pomiaru, temperatura, suma_opadu} = result[0]
+        const { data_pomiaru, godzina_pomiaru, temperatura, suma_opadu} = result[0]
 
         dateParagraph.textContent = `Data i godzina pomiaru: ${data_pomiaru}  ${godzina_pomiaru}:00`
         tempMessageParagraph.textContent = `Temperatura: ${temperatura} °C`
