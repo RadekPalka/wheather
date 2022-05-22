@@ -18,7 +18,7 @@ let jData;
 })()
 
 const displayCityData= city =>{
-    if (city !== "unknown") {
+    if (city) {
 
         const result = jData.filter(el => el.stacja === city)
         const { data_pomiaru, godzina_pomiaru, temperatura, suma_opadu} = result[0]
