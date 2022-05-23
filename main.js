@@ -11,7 +11,7 @@ let jData;
 
     jData.forEach(el =>{
         const optionElement= document.createElement("option")
-        optionElement.setAttribute("value" , `${el.stacja}`)
+
         optionElement.textContent = el.stacja
         selectElement.appendChild(optionElement)
     })
@@ -21,9 +21,9 @@ const displayCityData= city =>{
     if (city) {
 
         const result = jData.filter(el => el.stacja === city)
-        const { data_pomiaru, godzina_pomiaru, temperatura, suma_opadu} = result[0]
+        const { data_pomiaru, godzina_pomiaru, temperatura, suma_opadu, stacja} = result[0]
 
-        dateParagraph.textContent = `Data i godzina pomiaru: ${data_pomiaru}  ${godzina_pomiaru}:00`
+        dateParagraph.textContent = `Data i godzina pomiaru: ${data_pomiaru}  ${godzina_pomiaru}:00 dla miasta ${stacja}`
         tempMessageParagraph.textContent = `Temperatura: ${temperatura} °C`
         rainMessageParagraph.textContent = `Suma opadu: ${suma_opadu}`
     }
