@@ -30,4 +30,4 @@ const displayCityData= city =>{
 
 }
 
-selectElement.addEventListener("click", (e)=> displayCityData(e.target.value))
+selectElement.addEventListener("change", (e)=> displayCityData(e.target.value))
